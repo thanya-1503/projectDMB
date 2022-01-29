@@ -1,0 +1,124 @@
+{
+    "local": {
+        "ssl": {
+            "require": true,
+            "rejectUnauthorized": false
+          },
+        "domain": "https://webasset.entro-lab.com",
+        "host": "localhost",
+        "timezone": "+07:00",
+        "app_port": "5000",
+        "app_https": false,
+        "secret": "secret3th",
+        "format_date": "YYYY/MM/DD",
+        "format_time": "HH:mm:ss",
+        "datetimeFormat": "YYYY-MM-DD HH:mm:ss",
+        "timeout": "6000",
+        "database": {
+            "host": "ec2-54-83-157-174.compute-1.amazonaws.com",
+            "port": 5432,
+            "username": "ylvjkbjjxzxprf",
+            "password": "203a78f779f2da93381ebb2be45e1988a00747e61116e7e67099f06b8db9ba6a",
+            "database": "d4e73fc4soqi2m",
+            "dialect": "postgres",
+            "charset": "utf8",
+            "collate": "utf8_general_ci",
+            "schema": "dbo",
+            "logQueryParameters": false,
+            "dialectOptions": {
+                "requestTimeout": 15000,
+                "useUTC": false,
+                "dateStrings": true,
+                "typeCast": true,
+                "ssl": true
+            },
+            "trustServerCertificate": false,
+            "timezone": "+07:00"
+        },
+        "timeoutTokenTemp": 604800000,
+        "timeoutToken": 10800000,
+        "timeoutOtp": 1800000
+    },
+    
+    "development": {
+        "ssl": {
+            "require": true,
+            "rejectUnauthorized": false
+          },
+        "domain": "https://webasset.entro-lab.com",
+        "host": "localhost",
+        "timezone": "+07:00",
+        "app_port": "5000",
+        "app_https": false,
+        "secret": "secret3th",
+        "format_date": "YYYY/MM/DD",
+        "format_time": "HH:mm:ss",
+        "datetimeFormat": "YYYY-MM-DD HH:mm:ss",
+        "timeout": "6000",
+        "database": {
+            "host": "ec2-54-83-157-174.compute-1.amazonaws.com",
+            "port": 5432,
+            "username": "ylvjkbjjxzxprf",
+            "password": "203a78f779f2da93381ebb2be45e1988a00747e61116e7e67099f06b8db9ba6a",
+            "database": "d4e73fc4soqi2m",
+            "dialect": "postgres",
+            "charset": "utf8",
+            "collate": "utf8_general_ci",
+            "schema": "dbo",
+            "logQueryParameters": false,
+            "dialectOptions": {
+                "requestTimeout": 15000,
+                "useUTC": false,
+                "dateStrings": true,
+                "typeCast": true,
+                "ssl": true
+            },
+            
+            "trustServerCertificate": false,
+            "timezone": "+07:00"
+        },
+        "timeoutTokenTemp": 604800000,
+        "timeoutToken": 10800000,
+        "timeoutOtp": 1800000
+    },
+    "production": {
+        "ssl": {
+            "require": true,
+            "rejectUnauthorized": false
+          },
+        "domain": "https://webasset.entro-lab.com",
+        "host": "localhost",
+        "timezone": "+07:00",
+        "app_port": "5000",
+        "app_https": false,
+        "secret": "secret3th",
+        "format_date": "YYYY/MM/DD",
+        "format_time": "HH:mm:ss",
+        "datetimeFormat": "YYYY-MM-DD HH:mm:ss",
+        "timeout": "6000",
+        "database": {
+            "host": "ec2-54-83-157-174.compute-1.amazonaws.com",
+            "port": 5432,
+            "username": "ylvjkbjjxzxprf",
+            "password": "203a78f779f2da93381ebb2be45e1988a00747e61116e7e67099f06b8db9ba6a",
+            "database": "d4e73fc4soqi2m",
+            "dialect": "postgres",
+            "charset": "utf8",
+            "collate": "utf8_general_ci",
+            "schema": "dbo",
+            "logQueryParameters": false,
+            "dialectOptions": {
+                "requestTimeout": 15000,
+                "useUTC": false,
+                "dateStrings": true,
+                "typeCast": true,
+                "ssl": true
+            },
+            "trustServerCertificate": false,
+            "timezone": "+07:00"
+        },
+        "timeoutTokenTemp": 604800000,
+        "timeoutToken": 10800000,
+        "timeoutOtp": 1800000
+    }
+}

@@ -1,0 +1,32 @@
+{
+    "read_userAccount" : {
+        "uri": "/api/userAccount",
+        "method": "get",
+        "apiName": "SEARCH_USERS"
+    },
+
+    "read_asset" : {
+        "uri": "/api/asset",
+        "method": "get",
+        "apiName": "SEARCH_ASSET"
+    },
+    "read_config" : {
+        "uri": "/api/config",
+        "method": "get",
+        "apiName": "SEARCH_CONFIG"
+    },
+    "read_employee" : {
+        "uri": "/api/employee",
+        "method": "get",
+        "apiName": "SEARCH_EMPLOYEE"
+    },
+    "read_employeeAsset" : {
+        "uri": "/api/asset",
+        "method": "get",
+        "apiName": "SEARCH_EMPLOYEEASSET"
+    }
+
+
+
+   
+}

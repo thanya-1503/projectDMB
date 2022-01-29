@@ -1,0 +1,11 @@
+{
+    "apps": [
+        {
+            "exec_mode": "fork",
+            "instances": 1,
+            "script": "app/index.js",
+            "name": "web-assets-service",
+            "interpreter": "node"
+        }
+    ]
+}

@@ -1,0 +1,9 @@
+{
+    "E000": "{data} successful.",
+    "E001": "{data} failed.",
+    "E002": "Username is not associated with any account.",
+    "E003": "Incorrect {data} !",
+    "E004": "This email does not exist.",
+    "E005": "Invalid OTP code !",
+    "E006": "This {data} is already exists."
+}
