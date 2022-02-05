@@ -98,6 +98,30 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING,
             allowNull: true,  
         },
+        img: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
+        type: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
+        facebook: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
+        line: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
+        ig: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
+        phone: {
+            type: DataTypes.STRING,
+            allowNull: true,  
+        },
     }, {
         sequelize,
         tableName: 'userAccount',

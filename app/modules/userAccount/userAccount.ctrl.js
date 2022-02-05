@@ -75,6 +75,11 @@ exports.createAccount = async (req, res) => {
             "description": req.body.description,
             "office": req.body.office,
             "province": req.body.province,
+            "facebook": req.body.facebook,
+            "line": req.body.line,
+            "ig": req.body.ig,
+            "phone": req.body.phone,
+            "type": req.body.type,
         })
         const result = {
             data: responseDetail,
