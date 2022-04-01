@@ -350,3 +350,71 @@ exports.viewAccouct = async (req, res) => {
         ret.responseError(req, res, err, '', now);
     }
 }
+
+exports.createHistory = async (req, res) => {
+    const now = Date.now();
+    const status = false;
+    // const password = req.body.password
+    // const pass = await models.userAccount.options.instanceMethods.generateHash(password)
+    try {
+        const responseDetail = await models.historyUser.create({
+            "_id": req.body._id,
+            "username": req.body.username,
+            "password": req.body.password,
+            "createBy": req.firstname,
+            "createDt": now,
+            "updateBy": req.firstname,
+            "updateDt": now,
+            "status": status,
+            "firstname": req.body.firstname,
+            "lastname": req.body.lastname,
+            "role": req.body.role,
+            "nickname": req.body.nickname,
+            "prefix": req.body.prefix,
+            "school": req.body.school,
+            "weight": req.body.weight,
+            "age": req.body.age,
+            "height": req.body.height,
+            "picture": req.body.picture,
+            "gender": req.body.gender,
+            "description": req.body.description,
+            "office": req.body.office,
+            "province": req.body.province,
+            "facebook": req.body.facebook,
+            "line": req.body.line,
+            "ig": req.body.ig,
+            "phone": req.body.phone,
+            "type": req.body.type,
+        })
+        const result = {
+            data: responseDetail,
+        }
+        ret.response(req, res, result, '', now);
+        
+    } catch (err) {
+        console.log("err");
+        console.log(err);
+        ret.responseError(req, res, err, '', now);
+    }
+}
+exports.listHistory = async (req, res) => {
+    const now = Date.now();
+    try {
+        const responseDetail = await models.historyUser.findAll({
+            order: [
+                ['updateDt', 'DESC'],
+            ],
+        }
+
+        );
+        const result = {
+            data: responseDetail,
+        }
+        ret.response(req, res, result, '', now);
+        
+    } catch (err) {
+        console.log("err");
+        console.log(err);
+        ret.responseError(req, res, err, '', now);
+    }
+}

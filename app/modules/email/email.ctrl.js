@@ -12,15 +12,15 @@ exports.sentemail = async function (req, res) {
     port: 465,
     secure: true, 
     auth: {
-      user: "myboodestiny@gmail.com",
-      pass: "0640939632", 
+      user: "noreply.destinyMyBoo@gmail.com",
+      pass: "nun123456", 
     },
     tls: {
         rejectUnauthorized: false
         }
   }));
   let mailOptions = {
-    from: 'noreply.entronica@gmail.com',         
+    from: 'noreply.destinyMyBoo@gmail.com',         
     to: `${username}`,           
     subject: 'รหัสผ่านเข้าสู่ระบบ Destiny My Boo ของคุณ',             
     html: Html
@@ -47,15 +47,15 @@ exports.sentemailOtp = async function (req, res)  {
     port: 465,
     secure: true, 
     auth: {
-      user: "myboodestiny@gmail.com",
-      pass: "0640939632", 
+      user: "noreply.destinyMyBoo@gmail.com",
+      pass: "nun123456", 
     },
     tls: {
         rejectUnauthorized: false
         }
   }));
   let mailOptions = {
-    from: 'myboodestiny@gmail.com',         
+    from: 'noreply.destinyMyBoo@gmail.com',         
     to: `${username}`,      
     subject: 'Forgot Password',              
     html:  htmlTemplete 

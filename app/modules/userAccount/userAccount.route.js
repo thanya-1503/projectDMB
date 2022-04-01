@@ -15,6 +15,8 @@ module.exports = function (app) {
     app.put('/api/editpassword', userAccountCtrl.editpassword);
     app.post('/api/checkCreateUser', userAccountCtrl.checkCreateUser);
     app.post('/api/viewAccouct', userAccountCtrl.viewAccouct);
+    app.post('/api/createHistory', userAccountCtrl.createHistory);
+    app.get('/api/listHistory', userAccountCtrl.listHistory);
     
   }
   
