@@ -12,8 +12,8 @@ exports.sentemail = async function (req, res) {
     port: 465,
     secure: true, 
     auth: {
-          user: "noreply.entronica@gmail.com",
-          pass: "yoiplddixzkuuduk", 
+      user: "myboodestiny@gmail.com",
+      pass: "0640939632", 
     },
     tls: {
         rejectUnauthorized: false
@@ -22,7 +22,7 @@ exports.sentemail = async function (req, res) {
   let mailOptions = {
     from: 'noreply.entronica@gmail.com',         
     to: `${username}`,           
-    subject: 'รหัสผ่านเข้าสู่ระบบ Webasset ของคุณ',             
+    subject: 'รหัสผ่านเข้าสู่ระบบ Destiny My Boo ของคุณ',             
     html: Html
   };
   transporter.sendMail(mailOptions, function (err, info) {
@@ -31,6 +31,7 @@ exports.sentemail = async function (req, res) {
       res.end("error")
     } 
     else
+    
       console.log(info);
  });
 }
@@ -462,18 +463,18 @@ const sentemailHtml = function(pass,user) {
                               <tr>
                                 <td class="h1 pb25"
                                   style="color:#000000; font-family:'Muli', Arial,sans-serif; font-size:40px; line-height:46px; text-align:center; padding-bottom:25px;">
-                                  Web Asset</td>
+                                  Destiny My Boo</td>
                               </tr>
                               <tr>
                                 <td class="h1 pb25"
                                   style="text-align:center; padding-bottom:25px;">
-                                  <img width="150" height="150" src="https://entronica.co.th/assets/img/logo.png">
+                                  <img width="150" height="150" src="https://pics.freeicons.io/uploads/icons/png/1811517341549346208-512.png">
                                 </td>
                               </tr>
                               <tr>
                                 <td class="text-center pb25"
                                   style="color:#000000; font-family:'Muli', Arial,sans-serif; font-size:16px; line-height:30px; text-align:center; padding-bottom:25px;">
-                                  คุณได้ลงทะเบียน ${user} เป็น User Webasset รหัสผ่านของคุณคือ ${pass}</span>
+                                  คุณได้ลงทะเบียน ${user} เป็น ADMIN รหัสผ่านของคุณคือ ${pass}</span>
                                 </td>
                               </tr>
                               <!-- Button -->

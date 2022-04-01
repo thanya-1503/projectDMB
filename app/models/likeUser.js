@@ -16,11 +16,11 @@ module.exports = function(sequelize, DataTypes) {
             allowNull: true,
         },
         id_chat: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(100),
             allowNull: true,
         },
         status: {
-            type: DataTypes.STRING(100),
+            type: DataTypes.BOOLEAN,
             allowNull: true,
         },
         createDt: {
@@ -39,6 +39,10 @@ module.exports = function(sequelize, DataTypes) {
             type: DataTypes.STRING(100),
             allowNull: false,
             field: 'updateBy'
+        },
+        chat_status: {
+            type: DataTypes.BOOLEAN,
+            allowNull: false,
         },
     }, {
         sequelize,

@@ -8,7 +8,7 @@ module.exports = function(sequelize, DataTypes) {
             field: 'id_message'
         },
         id_chat: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING(100),
             allowNull: true,
         },
         id_receivet: {

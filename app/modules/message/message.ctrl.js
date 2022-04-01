@@ -29,7 +29,7 @@ exports.createMessage = async (req, res) => {
             "id_receivet":req.body.id_receivet,
             "id_sender":req.body.id_sender,
             "message":req.body.message,
-            "time":req.body.time,
+            "time":now,
             "status":req.body.status,
             "createDt":now,
             "createBy":req.firstname,
@@ -41,6 +41,21 @@ exports.createMessage = async (req, res) => {
         }
         ret.response(req, res, result, '', now); 
     } catch (err) {
+        console.log("err");
+        console.log(err);
         ret.responseError(req, res, err, '', now);
     }
 }
+
+exports.deleteMsg = async (req, res) => {
+    const now = Date.now();
+    const id_message = req.params.id_message;
+    const responseDetail = await models.message.destroy({
+        where: { id_message: id_message }
+    }).then(() => {
+        ret.response(req, res, '', '', now);
+    }).catch(err => {
+        console.log(err);
+        ret.responseError(req, res, err, '', now);
+    });
+};

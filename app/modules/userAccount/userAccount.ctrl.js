@@ -46,10 +46,58 @@ exports.searchUserAccount = async (req, res) => {
         ret.responseError(req, res, err, '', now);
     }
 }
+
 exports.createAccount = async (req, res) => {
     const now = Date.now();
     const status = true;
     const password = req.body.password
+    const pass = await models.userAccount.options.instanceMethods.generateHash(password)
+    try {
+        const responseDetail = await models.userAccount.create({
+            "_id": req.body._id,
+            "username": req.body.username,
+            "password": pass,
+            "createBy": req.firstname,
+            "createDt": now,
+            "updateBy": req.firstname,
+            "updateDt": now,
+            "status": status,
+            "firstname": req.body.firstname,
+            "lastname": req.body.lastname,
+            "role": req.body.role,
+            "nickname": req.body.nickname,
+            "prefix": req.body.prefix,
+            "school": req.body.school,
+            "weight": req.body.weight,
+            "age": req.body.age,
+            "height": req.body.height,
+            "picture": req.body.picture,
+            "gender": req.body.gender,
+            "description": req.body.description,
+            "office": req.body.office,
+            "province": req.body.province,
+            "facebook": req.body.facebook,
+            "line": req.body.line,
+            "ig": req.body.ig,
+            "phone": req.body.phone,
+            "type": req.body.type,
+        })
+        const result = {
+            data: responseDetail,
+        }
+        ret.response(req, res, result, '', now);
+        
+    } catch (err) {
+        console.log("err");
+        console.log(err);
+        ret.responseError(req, res, err, '', now);
+    }
+}
+
+exports.createAccountAdmin = async (req, res) => {
+    const now = Date.now();
+    const status = true;
+    const password = 123456
     const pass = await models.userAccount.options.instanceMethods.generateHash(password)
     try {
         const responseDetail = await models.userAccount.create({
@@ -240,8 +288,10 @@ exports.checkpassword = async (req, res) => {
         console.log(authen);
         // if (!authen){
         //     console.log(false);
-        // }
+        // } 
+        // console.log(authen);
         if (!authen) throw [40101];
+       
         ret.response(req, res, '', '', now);
     } catch (error) {
         console.log(error);
@@ -263,9 +313,10 @@ exports.editpassword = async (req, res) => {
                 console.log(err);
                 ret.responseError(req, res, err, '', now);
             });
-    } catch (error) {
-        ret.responseError(req, res, err, '', now);
-    }
+        } catch (error) {
+            console.log(error);
+            ret.responseError(req, res, error, '', '');
+        }
 };
 
 exports.checkCreateUser = async (req, res) => {
@@ -276,6 +327,22 @@ exports.checkCreateUser = async (req, res) => {
 	   	WHERE  "userAccount"."username" = '${req.body.username}'`
         const responseList = await models.sequelize.query(sql, { type: QueryTypes.SELECT }).then(checkCreateUser => {
             return res.json(checkCreateUser);
+            // return responseList;
+        })
+    } catch (err) {
+        console.log(err)
+        ret.responseError(req, res, err, '', now);
+    }
+}
+
+exports.viewAccouct = async (req, res) => {
+    const now = Date.now();
+    try {
+        const sql = `SELECT *
+        FROM "userAccount" 
+	   	WHERE  "userAccount"."_id" = '${req.body._id}'`
+        const responseList = await models.sequelize.query(sql, { type: QueryTypes.SELECT }).then(viewAccouct => {
+            return res.json(viewAccouct);
             // return responseList;
         })
     } catch (err) {
