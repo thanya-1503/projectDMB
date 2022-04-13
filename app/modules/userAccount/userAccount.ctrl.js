@@ -350,6 +350,22 @@ exports.viewAccouct = async (req, res) => {
         ret.responseError(req, res, err, '', now);
     }
 }
+exports.viewAccouctHistory = async (req, res) => {
+    const now = Date.now();
+    try {
+        const sql = `SELECT *
+        FROM "historyUser" 
+	   	WHERE  "historyUser"."_id" = '${req.body._id}'`
+        const responseList = await models.sequelize.query(sql, { type: QueryTypes.SELECT }).then(viewAccouctHistory => {
+            return res.json(viewAccouctHistory);
+            console.log(sql);
+            // return responseList;
+        })
+    } catch (err) {
+        console.log(err)
+        ret.responseError(req, res, err, '', now);
+    }
+} 
 
 exports.createHistory = async (req, res) => {
     const now = Date.now();
