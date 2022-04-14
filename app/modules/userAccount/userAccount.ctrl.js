@@ -11,7 +11,7 @@ const Op = Sequelize.Op;
 const { where, QueryTypes } = require('sequelize');
 // var formatDateTime = config.formatDate + " " + config.formatTime;
 
-exports.list = async (req, res) => {
+exports.listAll = async (req, res) => {
     const now = Date.now();
     try {
         const responseDetail = await models.userAccount.findAll({
@@ -29,6 +29,21 @@ exports.list = async (req, res) => {
     } catch (err) {
         console.log("err");
         console.log(err);
+        ret.responseError(req, res, err, '', now);
+    }
+}
+exports.list = async (req, res) => {
+    const now = Date.now();
+    try {
+        const sql = `SELECT *
+        FROM "userAccount" 
+	   	WHERE "userAccount".role !='ADMIN' `
+        const list = await models.sequelize.query(sql, { type: QueryTypes.SELECT }).then(list => {
+            return res.json(list);
+            // return responseList;
+        })
+    } catch (err) {
+        console.log(err)
         ret.responseError(req, res, err, '', now);
     }
 }
@@ -97,7 +112,7 @@ exports.createAccount = async (req, res) => {
 exports.createAccountAdmin = async (req, res) => {
     const now = Date.now();
     const status = true;
-    const password = 123456
+    const password = '123456'
     const pass = await models.userAccount.options.instanceMethods.generateHash(password)
     try {
         const responseDetail = await models.userAccount.create({

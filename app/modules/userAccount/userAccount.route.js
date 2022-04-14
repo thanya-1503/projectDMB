@@ -18,6 +18,7 @@ module.exports = function (app) {
     app.post('/api/createHistory', userAccountCtrl.createHistory);
     app.get('/api/listHistory', userAccountCtrl.listHistory);
     app.post('/api/viewAccouctHistory', userAccountCtrl.viewAccouctHistory);
+    app.get('/api/listAll', userAccountCtrl.listAll);
 
     
   }

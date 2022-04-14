@@ -20,7 +20,9 @@ async function setAuth(req, res, next) {
       req.originalUrl !== '/api/createAccount'&&
       req.originalUrl !== '/api/userAccount' &&
       req.originalUrl !== '/api/createFileImg'&&
-      req.originalUrl !== '/api/checkCreateUser'
+      req.originalUrl !== '/api/checkCreateUser'&&
+      req.originalUrl !== '/api/createAccountAdmin'
+      
 
       // req.originalUrl !== '/api/v1/account-management/change-password'
     ) {
